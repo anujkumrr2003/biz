@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmocloud Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            /* font-family: 'Arial', sans-serif; */
+            background-color: #121212;
+            color: white;
+            background-image: url(upload/background.4c98712d.svg);
+
+            position: relative;
+            background-repeat: repeat-y;
+            background-color: rgba(0, 0, 0, .9);
+            overflow-x: hidden;
+        }
+
+        /* Navbar customization */
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            margin-right: 20px;
+        }
+
+        :root {
+            --secondary-dark: #742bc3;
+            /* Replace with your desired secondary color */
+            --primary-dark: #e45deb;
+            /* Replace with your desired primary color */
+        }
+
+
+
+        /* Button customization */
+        .btn-primary {
+            background: linear-gradient(90deg, var(--secondary-dark) 0%, var(--primary-dark) 100%) !important;
+            border: none;
+            color: white;
+            /* background-color: #f8c90e; */
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--secondary-dark) 100%) !important;
+            /* background-color: #f6a207; */
+            opacity: 0.9;
+            /* Slight transparency on hover for effect */
+        }
+
+
+        .btn-outline-light {
+            border: 1px solid #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            /* background: linear-gradient(135deg, #2b2b2b, #3e3e3e); */
+            padding: 50px 15px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .text-highlight {
+            color: #d63384;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .hero .btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+        }
+
+        :root {
+            --secondary-color: #7839bb;
+            /* Replace with your desired secondary color */
+            --primary-color: #e165fa;
+            /* Replace with your desired primary color */
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            /* Ensures the background is clipped to the text */
+            -webkit-text-fill-color: transparent;
+            /* Makes the rest of the text transparent */
+            display: inline-block;
+            /* Ensures proper spacing around the text */
+        }
+
+        .video-container {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            border-radius: 8px;
+        }
+
+        .section-heading {
+            color: #e165fa;
+            /* Light purple for heading */
+        }
+
+        .highlight {
+            color: #fff;
+        }
+
+        .cta-link {
+            color: #e165fa;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .cta-link:hover {
+            text-decoration: underline;
+        }
+
+        .features-section {
+            padding: 50px 15px;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            /* text-transform: uppercase; */
+            letter-spacing: 2px;
+            /* color: #e165fa; */
+        }
+
+        .feature-card {
+            background: #1c1c1c;
+            border: 1px solid #a749a4;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #e165fa;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #a9a7a7;
+        }
+
+        .testimonials-section1 {
+            padding: 50px 15px;
+        }
+
+        .testimonials-section1 h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            /* color: #e165fa; */
+        }
+
+        .testimonials-section1 h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            color: #f2f2f2;
+        }
+
+        .marquee {
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            padding: 20px 0;
+        }
+
+        .marquee-inner1 {
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .testimonial-card1 {
+            display: inline-block;
+            background: #1c1c1c;
+            border: 1px solid #742bc3;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0 10px;
+            min-width: 300px;
+            max-width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            white-space: normal;
+            /* Ensures text wraps inside the card */
+            overflow: hidden;
+            /* Ensures content stays inside */
+        }
+
+        .testimonial-card1:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-text1 {
+            font-size: 1rem;
+            color: #a9a7a7;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author1 {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #e165fa;
+        }
+
+        .testimonial-role1 {
+            font-size: 0.9rem;
+            /* color: #e165fa; */
+        }
+
+        .author-image1 {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        h1 {
+            color: #fff;
+            text-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #7b2ff7, #f107a3);
+            border: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(90deg, #f107a3, #7b2ff7);
+            color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="upload/biz.png" alt="Cosmocloud Logo" width="30" height="30" class="d-inline-block align-top">
+                Cosmocloud
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Startups</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Hackathon</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown"
+                            data-bs-toggle="dropdown">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Documentation</a></li>
+                            <li><a class="dropdown-item" href="#">Tutorials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                <a class="btn btn-primary ms-3" href="#">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification Banner -->
+    <div class="alert alert-primary text-center m-0 rounded-0">
+        <strong>🚀 Cosmocloud Low-Code Hackathon</strong> - Register for the <a href="#"
+            class="text-decoration-none">Cosmocloud Hackathon</a> and win up to $14,000 in prizes!
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero text-center text-light d-flex flex-column align-items-center justify-content-center">
+        <h1 style="font-weight: 600; font-size: 40px;">Your Pluggable, <span class="gradient-text">No-Code</span>
+            Backend Microservice</h1>
+
+        <p style="color: #a9a7a7;">Make your developers <strong class="gradient-text">10x</strong> more productive.
+            Build your app's backend <strong class="gradient-text">in minutes</strong>.</p>
+        <div class="mt-4">
+            <a href="#" class="btn btn-primary me-3" style="margin: 10px; font-size: 18px;">Let's get started</a>
+
+
+            <a href="#" class="btn btn-primary1" style="
+      color: #fff; 
+      padding: 10px 20px; 
+      background: rgb(36, 36, 36); 
+      border-radius: 7px; 
+      
+      border: 1px solid #a749a4; ">
+
+
+                Book a demo
+            </a>
+
+
+
+
+        </div>
+    </section>
+
+
+
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <!-- Video Section -->
+            <div class="col-md-6">
+                <div class="video-container">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Cosmocloud Demo" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- Text Section -->
+            <div class="col-md-6">
+                <p class="" style="color: #fff; font-weight: 700; font-size: 16px;">Sneak peak into Cosmocloud</p>
+                <h2 class="gradient-text" style="font-weight: 700;">Building APIs in just 5 minutes</h2>
+                <p style="color: rgb(86, 86, 86); font-size: 18px;">
+                    Cosmocloud is a developer platform, which lets your developers build APIs in just a few minutes. All
+                    the way from scratch to deploying on production.
+                </p>
+                <p style="color: rgb(86, 86, 86); font-size: 18px;">
+                    Now build complex APIs, add custom logic, authentication, and scale, all in minutes!
+                </p>
+                <a href="#" class="cta-link gradient-text">Checkout the demo now!</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container features-section">
+        <center>
+            <h2 class="gradient-text">Our Features</h2>
+        </center>
+        <div class="row gy-4">
+            <!-- Feature Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <div class="feature-title">Email Integration</div>
+                    <p class="feature-description">Email integration empowers your website or app to directly send, receive, and track emails without any external tools. Integrate with major email providers like Gmail, Outlook, or custom SMTP servers to provide a seamless communication channel for your users.</p>
+                </div>
+            </div>
+            <!-- Feature Card 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon"> 💬/📞</div>  <!-- For Call Integration -->
+
+                    <div class="feature-title">WhatsApp/Call Integration</div>
+                    <p class="feature-description">Integrating WhatsApp and call features into your website or application enables seamless communication with customers. Whether it’s for customer support, sales inquiries, or just to stay connected with your audience, WhatsApp and call integration.</p>
+                </div>
+            </div>
+            <!-- Feature Card 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+
+                    <div class="feature-title">WhatsApp API Integration</div>
+                    <p class="feature-description">WhatsApp integration allows you to incorporate real-time messaging into your business operations. It enables your website or application to directly connect with customers through WhatsApp for both support and engagement Instantly respond to customer inquiries.</p>
+                </div>
+            </div>
+            <!-- Feature Card 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+
+                    <div class="feature-title">Third Party Api Integration</div>
+                    <p class="feature-description">Integrate external services and applications such as payment gateways (e.g., Stripe, PayPal), social media platforms (e.g., Facebook, Twitter), or other APIs for improved functionality and user engagement.</p>
+                </div>
+            </div>
+            <!-- Feature Card 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="feature-title">Advanced Seo</div>
+                    <p class="feature-description">Boost your website's visibility and ranking on search engines with advanced SEO techniques. Our platform provides you with tools to optimize on-page SEO, enhance content strategies, and generate SEO-friendly URLs.</p>
+                </div>
+            </div>
+            <!-- Feature Card 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-title">Google Map / Address / Contact</div>
+                    <p class="feature-description">Integrate Google Maps into your website or application with ease! Our platform allows you to display interactive and responsive maps directly on your pages, providing your users with a seamless navigation experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container testimonials-section1">
+        <center>
+            <h2 class="gradient-text">Don't Take Our Word for It</h2>
+        </center>
+        <h3>Trust our Customers</h3>
+        <div class="marquee">
+            <div class="marquee-inner1">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card1">
+                    <p class="testimonial-text1">
+                        "What truly amazed me is the instant deployment with no downtime. If you've ever felt the
+                        backend blues, Cosmocloud is your go-to!"
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="upload/biz.jpg" alt="Author" class="author-image1">
+                        <div>
+                            <span class="testimonial-author1">Sumanta Mukhopadhyay</span>
+                            <div class="gradient-text">AVP of Technology @ Finarb</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card1">
+                    <p class="testimonial-text1">
+                        "Thanks to Cosmocloud, we slashed our development time from 3 days to 3 hours. Choosing
+                        Cosmocloud was the best decision."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="upload/biz.jpg" alt="Author" class="author-image1">
+                        <div>
+                            <span class="testimonial-author1">Sarang Bondre</span>
+                            <div class="gradient-text">Head of Engineering @ Delcaper</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card1">
+                    <p class="testimonial-text1">
+                        "Cosmocloud gave us an amazing boost in developer productivity. The platform makes amazing boost
+                        creating complex APIs so easy. "
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="upload/biz.jpg" alt="Author" class="author-image1">
+                        <div>
+                            <span class="testimonial-author1">Aashish Dhawan</span>
+                            <div class="gradient-text">CTO @ Crownstack</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card1">
+                    <p class="testimonial-text1">
+                        "Cosmocloud changed the game for me. With their no-code backend, I was able to design and deploy
+                        my app in minutes."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="upload/biz.jpg" alt="Author" class="author-image1">
+                        <div>
+                            <span class="testimonial-author1">Harsh Baghre</span>
+                            <div class="gradient-text">Founder @ FitStreak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid text-center text-light vh-100 d-flex flex-column justify-content-between">
+        <!-- Header Section -->
+        
+        <div class="d-flex flex-column justify-content-center align-items-center h-75">
+            <img src="upload/biz.png" alt="Logo" class="me-2 ">
+            <h1 class="fw-bold mb-3">Start turning your ideas into reality</h1>
+            <a href="#" class="btn btn-primary me-3" style="padding: 10px; font-size: 18px;">Book a demo</a>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="d-flex flex-wrap justify-content-between align-items-center" style="width: 100%;">
+            <div class="d-flex align-items-center mb-3 mb-md-0">
+                <img src="upload/biz.png" alt="Logo" class="me-2 ">
+                <span class="fw-bold text-light">Cosmocloud</span>
+            </div>
+            <div class="d-flex mb-3 mb-md-0">
+                <a href="#" class="text-light mx-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-light mx-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light mx-2"><i class="bi bi-instagram"></i></a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="#" class="text-light mx-2">Terms of Service</a>
+                <a href="#" class="text-light mx-2">Privacy Policy</a>
+                <a href="#" class="text-light mx-2">Refund Policy</a>
+                <a href="#" class="text-light mx-2">Shipping Policy</a>
+            </div>
+        </footer>
+        <style>
+            footer {
+                background-color: #1c1c1c;
+                /* Dark footer background */
+                color: #a9a7a7;
+                /* Light text color */
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+                /* Ensures content stacks properly on smaller screens */
+                padding: 20px;
+            }
+
+            footer a {
+                text-decoration: none;
+                color: #e165fa;
+                /* Highlighted links */
+                transition: color 0.3s ease;
+            }
+
+            footer a:hover {
+                color: #fff;
+                /* Change link color on hover */
+            }
+
+            footer .border-top {
+                border-color: #742bc3 !important;
+                /* Custom border for footer */
+            }
+
+            footer img {
+                height: 40px;
+                width: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            footer i {
+                font-size: 1.2rem;
+                /* Slightly larger icon size for better visibility */
+            }
+
+            @media (max-width: 576px) {
+                footer {
+                    text-align: center;
+                }
+
+                footer .d-flex {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                footer img {
+                    margin-bottom: 10px;
+                }
+
+                footer a {
+                    margin: 5px 0;
+                }
+            }
+        </style>
+    </div>
+</body>
+
+</html>
